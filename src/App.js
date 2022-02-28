@@ -20,8 +20,5 @@ export default function Home() {
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
       {!session ? <Auth /> : <Dashboard session={session} />}
     </div>
-    /*<div className="container" style={{ padding: '50px 0 100px 0' }}>
-      {!session ? <Auth /> : <Account key={session.user.id} session={session} />}
-    </div>*/
   )
 }
