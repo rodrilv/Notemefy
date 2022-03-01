@@ -23,6 +23,10 @@
     "a-btn-start": "Record",
     "a-btn-stop": "Stop",
     "a-btn-update": "Update Category",
+    "a-btn-reset": "Reset",
+    "a-warning-category": "You must select a category",
+    "a-updated-category": "Category Updated",
+    "a-error-category": "Error while updating",
     "mistakes": "Don't worry, everyone makes mistakes :) Try Again!",
     "refresh": "Cambiando a Español, vuelve a cargar la página."
 }
