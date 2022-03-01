@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -25,13 +25,30 @@ import { ModalAudio } from "../ModalAudio";
   }),
 }));*/
 
-export default function RecipeReviewCard({ id, title, content, due, createdAt, category }) {
+export default function RecipeReviewCard({ id, title, content, due, createdAt, category, audio }) {
   const [AuOpen, setAuOpen] = useState(false);
   const handleAuOpen = () => setAuOpen(true);
   const handleAuClose = () => setAuOpen(false);
+  const [audioUrl, setAudioUrl] = useState("");
 
   const Due = <i>{i18n.t("c-due")} <Typography variant="caption">{due}</Typography></i>
 
+  
+  const downloadAudio = async (path) => {
+    try {
+      const { data, error } = await supabase.storage
+        .from("avatars")
+        .download(path);
+      if (error) {
+        throw error;
+      }
+      const url = URL.createObjectURL(data);
+      setAudioUrl(url);
+    } catch (error) {
+      console.log("Not all cards have audio, that's why", error.message);
+    }
+  }
+  
   const DeleteCard = async () =>{
     const {data, error} = await supabase
     .from("cards")
@@ -52,6 +69,11 @@ export default function RecipeReviewCard({ id, title, content, due, createdAt, c
       throw error;
     }
   }
+
+  useEffect(() => {
+    if(audio) downloadAudio(audio);
+    //console.log(audio)
+  }, [audio])
 
   return (
     <Card
@@ -83,7 +105,7 @@ export default function RecipeReviewCard({ id, title, content, due, createdAt, c
       />
       
       <CardMedia>
-        <audio style={{marginLeft: 20}} src="" controls></audio>
+        <audio style={{marginLeft: 20}} src={audioUrl} controls></audio>
       </CardMedia>
       <CardContent>
         {content+" "}<p><i><b>{i18n.t("c-createdAt")}</b>{createdAt}</i></p>

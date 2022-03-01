@@ -38,7 +38,7 @@ export default function Dashboard({ session }) {
     const user = supabase.auth.user();
     const { data, error } = await supabase
       .from("cards")
-      .select("id, title, content, due, created_at, category")
+      .select("id, title, content, due, created_at, category, audio")
       .eq("userid", user.id);
 
     if (data) {
@@ -52,7 +52,7 @@ export default function Dashboard({ session }) {
     const user = supabase.auth.user();
     const { data, error } = await supabase
     .from("cards")
-    .select("id, title, content, due, created_at, category")
+    .select("id, title, content, due, created_at, category, audio")
     .match({userid: user.id, category: cat})
     
     if(data){
@@ -65,7 +65,10 @@ export default function Dashboard({ session }) {
   };
 
   const GetCategory = useCallback( async () => {
-    const { data, error } = await supabase.from("categories").select("*");
+    let user = supabase.auth.user()
+    const { data, error } = await supabase.from("categories")
+    .select("*")
+    .match({userid: user.id});
 
     if (data) {
       setCategory(data);
@@ -144,6 +147,7 @@ export default function Dashboard({ session }) {
                 due={cd.due}
                 createdAt={cd.created_at}
                 category={cd.category ?? "Not Categorized Yet"}
+                audio={cd.audio}
               />
             ))}
         </Grid>
