@@ -32,5 +32,6 @@
     "refresh": "Cambiando a Español, vuelve a cargar la página.",
     "c-delete-text": "Delete Card",
     "c-add-image": "Add a Picture",
-    "c-updated-image": "Picture Updated"
+    "c-updated-image": "Picture Updated",
+    "yet": "Not Categorized Yet"
 }
