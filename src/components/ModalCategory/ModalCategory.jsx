@@ -5,7 +5,7 @@ import { i18n } from "../../ES-EN";
 import Swal from "sweetalert2";
 
 export default function ModalCategory({ open, handleClose }) {
-  const [_id, setId] = useState("");
+  //const [_id, setId] = useState("");
   const [category, setCategory] = useState("");
 
   const addCategory = async () => {
