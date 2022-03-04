@@ -153,12 +153,12 @@ export default function Audio({ open, handleClose, id }) {
               <Button variant="contained" onClick={start}>
                 {i18n.t("a-btn-start")}
               </Button>
-              <Button variant="contained" onClick={stop}>
+              <Button variant="contained" onClick={ () => { stop(); Swal.fire({text: i18n.t("a-advice-stop")}) }}>
                 {i18n.t("a-btn-stop")}
               </Button>
               <Button variant="contained">
                 <label htmlFor="audio">
-                  Upload the Audio
+                  {i18n.t("a-btn-upload")}
                 </label>
                 </Button>
                 <input 

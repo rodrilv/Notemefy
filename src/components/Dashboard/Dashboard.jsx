@@ -38,7 +38,7 @@ export default function Dashboard({ session }) {
     const user = supabase.auth.user();
     const { data, error } = await supabase
       .from("cards")
-      .select("id, title, content, due, created_at, category, audio")
+      .select("id, title, content, due, created_at, category, audio, cardImage")
       .eq("userid", user.id);
 
     if (data) {
@@ -52,7 +52,7 @@ export default function Dashboard({ session }) {
     const user = supabase.auth.user();
     const { data, error } = await supabase
     .from("cards")
-    .select("id, title, content, due, created_at, category, audio")
+    .select("id, title, content, due, created_at, category, audio, cardImage")
     .match({userid: user.id, category: cat})
     
     if(data){
@@ -61,7 +61,6 @@ export default function Dashboard({ session }) {
       Swal.fire({title:"Error", icon:"warning"})
       throw error;
     }
-
   };
 
   const GetCategory = useCallback( async () => {
@@ -85,7 +84,7 @@ export default function Dashboard({ session }) {
     }else{
       GetCards();
     }
-  }, [cat])
+  }, [cat, card])
 
 
   useEffect(() =>{
@@ -148,6 +147,7 @@ export default function Dashboard({ session }) {
                 createdAt={cd.created_at}
                 category={cd.category ?? "Not Categorized Yet"}
                 audio={cd.audio}
+                cardImage={cd.cardImage ?? ""}
               />
             ))}
         </Grid>
