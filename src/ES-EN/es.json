@@ -23,10 +23,15 @@
     "a-btn-start": "Grabar",
     "a-btn-stop": "Detener",
     "a-btn-update": "Actualizar Categoría",
-    "a-btn-reset": "Reiniciar",
+    "a-btn-upload": "Subir Audio",
     "a-warning-category": "Debes seleccionar una categoría",
     "a-updated-category": "Categoría Actualizada",
     "a-error-category": "Error al Actualizar",
+    "a-advice-stop": "No olvides descargar tu audio para que puedas subirlo",
     "mistakes": "Todos cometemos errores, no pasa nada! :) Sólo intentalo nuevamente",
-    "refresh": "Changed to English, please refresh to see changes."
+    "refresh": "Changed to English, please refresh to see changes.",
+    "c-delete-text": "Eliminar Card",
+    "c-add-image": "Añadir Imagen",
+    "c-updated-image": "Imagen Actualizada"
+    
 }

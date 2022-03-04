@@ -23,10 +23,14 @@
     "a-btn-start": "Record",
     "a-btn-stop": "Stop",
     "a-btn-update": "Update Category",
-    "a-btn-reset": "Reset",
+    "a-btn-upload": "Upload the Audio",
     "a-warning-category": "You must select a category",
     "a-updated-category": "Category Updated",
     "a-error-category": "Error while updating",
+    "a-advice-stop": "Don't forget to download your audio!",
     "mistakes": "Don't worry, everyone makes mistakes :) Try Again!",
-    "refresh": "Cambiando a Español, vuelve a cargar la página."
+    "refresh": "Cambiando a Español, vuelve a cargar la página.",
+    "c-delete-text": "Delete Card",
+    "c-add-image": "Add a Picture",
+    "c-updated-image": "Picture Updated"
 }
