@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../config/supabaseClient";
-import { Button, Box, CircularProgress } from "@mui/material";
-import { height } from "@mui/system";
+import { Button, CircularProgress } from "@mui/material";
+
 
 export default function Avatar({ url, sizeW, sizeH, onUpload }) {
   const [avatarUrl, setAvatarUrl] = useState(null);

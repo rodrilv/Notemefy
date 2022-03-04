@@ -127,7 +127,7 @@ export default function Account({ session }) {
                   style={{ marginTop: 35, height: 70 }}
                   variant="contained"
                 >
-                  Save Changes
+                  {i18n.t("nc-save")}
                 </Button>
               )}
             </div>
