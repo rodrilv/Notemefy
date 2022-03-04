@@ -18,9 +18,9 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const paperStyle = {
     padding: 30,
-    height: "70vh",
+    height: "auto",
     width: 320,
-    margin: "50px auto",
+    margin: "10px auto",
     borderRadius: "20px",
   };
 
