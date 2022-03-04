@@ -31,7 +31,7 @@ export default function ModalCategory({ open, handleClose }) {
         {
           id: ( parseInt(_id) + 4 + parseInt(Math.random() * 1000) - 1 ),
           category: category,
-          userid: user.id,
+          userid: (user.id).toString(),
         },
       ]);
 
