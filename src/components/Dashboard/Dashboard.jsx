@@ -145,14 +145,15 @@ export default function Dashboard({ session }) {
                 content={cd.content}
                 due={cd.due}
                 createdAt={cd.created_at}
-                category={cd.category ?? "Not Categorized Yet"}
+                category={cd.category ?? i18n.t("yet")}
                 audio={cd.audio}
                 cardImage={cd.cardImage ?? ""}
+                
               />
             ))}
         </Grid>
       </Paper>
-      <ModalCategory open={catOpen} handleClose={handleCatClose} />
+      <ModalCategory open={catOpen} handleClose={handleCatClose} session={session} />
     </Fragment>
   );
 }

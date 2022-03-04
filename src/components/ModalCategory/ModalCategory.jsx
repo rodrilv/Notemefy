@@ -4,19 +4,19 @@ import { supabase } from "../../config/supabaseClient";
 import { i18n } from "../../ES-EN";
 import Swal from "sweetalert2";
 
-export default function ModalCategory({ open, handleClose }) {
+export default function ModalCategory({ open, handleClose, session }) {
   //const [_id, setId] = useState("");
   const [category, setCategory] = useState("");
 
   const addCategory = async () => {
-    const user = supabase.auth.user();
+    //const user = supabase.auth.user();
     let { data, error } = await supabase
       .from("categories")
       .insert([
         {
-          id: ( 4 + parseInt(Math.random() * 1000) - 1 ),
+          id: Math.floor(Math.random() * 1000),
           category: category,
-          userid: (user.id).toString(),
+          userid: session.user.id,
         },
       ]);
 
