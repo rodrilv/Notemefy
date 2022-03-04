@@ -17,10 +17,10 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const paperStyle = {
-    padding: 20,
+    padding: 30,
     height: "70vh",
     width: 320,
-    margin: "90px auto",
+    margin: "50px auto",
     borderRadius: "20px",
   };
 

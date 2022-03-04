@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -122,6 +123,19 @@ export default function AccountMenu({ session }) {
         <Button variant="outlined" onClick={() => changeLanguage()}>
           ES | EN
         </Button>
+      </ButtonGroup>
+
+      <ButtonGroup
+        style={{ marginLeft: 15 }}
+        color="primary"
+        variant="outlined"
+        aria-label="outlined button group"
+      >
+        <a href="https://github.com/rodrilv/Notemefy" target="_blank" rel="noreferrer">
+        <Button variant="outlined" style={{position: "relative", bottom: 1}}>
+          <GitHubIcon />
+        </Button>
+        </a>
       </ButtonGroup>
 
       <Menu
