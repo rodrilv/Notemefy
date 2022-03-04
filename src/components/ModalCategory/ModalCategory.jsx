@@ -8,6 +8,10 @@ export default function ModalCategory({ open, handleClose }) {
     const [_id, setId] = useState('');
     const [category, setCategory] = useState('');
 
+    const UserId = () =>{
+
+    }
+
     const GetIdCategory = async () =>{
         let { data, error } = await supabase
         .from("categories")
@@ -24,10 +28,11 @@ export default function ModalCategory({ open, handleClose }) {
     }
     const addCategory = async () =>{
         GetIdCategory();
+        const user = supabase.auth.user();
         let { data, error } = await supabase 
         .from("categories")
         .insert([
-            { id: parseInt(_id) + 2 + parseInt(Math.random()*100), category: category }
+            { id: parseInt(_id) + 4 + parseInt(Math.random()*1000), category: category, userid: user.id }
           ]);
 
         if(data){
