@@ -29,7 +29,7 @@ export default function ModalCategory({ open, handleClose }) {
       .from("categories")
       .insert([
         {
-          id: parseInt(_id) + 4 + parseInt(Math.random() * 1000),
+          id: ( parseInt(_id) + 4 + parseInt(Math.random() * 1000) - 1 ),
           category: category,
           userid: user.id,
         },
