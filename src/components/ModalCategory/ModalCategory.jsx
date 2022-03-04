@@ -8,28 +8,13 @@ export default function ModalCategory({ open, handleClose }) {
   const [_id, setId] = useState("");
   const [category, setCategory] = useState("");
 
-  const GetIdCategory = async () => {
-    let { data, error } = await supabase
-      .from("categories")
-      .select("id")
-      .limit(1)
-      .single();
-
-    if (data) {
-      setId(data.id);
-      console.log(_id);
-    } else {
-      throw error;
-    }
-  };
   const addCategory = async () => {
-    GetIdCategory();
     const user = supabase.auth.user();
     let { data, error } = await supabase
       .from("categories")
       .insert([
         {
-          id: ( parseInt(_id) + 4 + parseInt(Math.random() * 1000) - 1 ),
+          id: ( 4 + parseInt(Math.random() * 1000) - 1 ),
           category: category,
           userid: (user.id).toString(),
         },
