@@ -15,5 +15,5 @@ You need to install these dependecies in order to put this to work:
 > You will need your own supabase keys for this project!
 __You can visit a demo by clickin' this link! (Thanks to Netlify)__
 
-[Notemefy DEMO]("work in progress")
+[Notemefy DEMO](https://goofy-goodall-601e1f.netlify.app)
 
