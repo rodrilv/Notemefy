@@ -47,10 +47,10 @@ export default function Auth() {
   const changeLanguage = () => {
     if (window.localStorage.getItem("i18nextLng") === "es-ES") {
       window.localStorage.setItem("i18nextLng", "en-EN");
-      Swal.fire(i18n.t("refresh"));
+      Swal.fire( {text:i18n.t("refresh")} );
     } else {
       window.localStorage.setItem("i18nextLng", "es-ES");
-      Swal.fire(i18n.t("refresh"));
+      Swal.fire( {text:i18n.t("refresh")} );
     }
   };
 
